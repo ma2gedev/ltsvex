@@ -1,3 +1,8 @@
 # LTSV
 
-** TODO: Add description **
+LTSV parser implementation in Elixir
+
+## Reference
+
+http://ltsv.org/
+
