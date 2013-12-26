@@ -2,9 +2,8 @@ defmodule LTSV do
   @doc """
   # parse ltsv string
 
-  # TODO: following cause TokenMissingError
-  iex> LTSV.parse "name:taka\taddress:Seattle"
-  [#HashDict<[{"address", "Seattle"}, {"name", "taka"}]>]
+  iex> LTSV.parse("name:taka\taddress:Seattle") |> Enum.map(&Dict.to_list/1)
+  [[{"address", "Seattle"}, {"name", "taka"}]]
 
   """
   def parse(ltsv_string) do
