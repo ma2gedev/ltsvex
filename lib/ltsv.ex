@@ -13,7 +13,7 @@ defmodule LTSV do
 
   def parse_line(record) do
     String.split(record, "\t")
-      |> Enum.map(fn(field) -> list_to_tuple(String.split(field, ":")) end)
+      |> Enum.map(fn(field) -> List.to_tuple(String.split(field, ":")) end)
       |> Enum.into(HashDict.new)
   end
 
