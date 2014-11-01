@@ -13,8 +13,15 @@ defmodule LTSV do
 
   def parse_line(record) do
     String.split(record, "\t")
-      |> Enum.map(fn(field) -> List.to_tuple(String.split(field, ":")) end)
-      |> Enum.into(HashDict.new)
+      |> Enum.reduce(%HashDict{}, fn(field, acc) ->
+        case String.split(field, ":", parts: 2) do
+          [key, value] ->
+            acc = HashDict.put(acc, key, value)
+          _ ->
+            # Do nothing
+        end
+        acc
+      end)
   end
 
   @doc """
