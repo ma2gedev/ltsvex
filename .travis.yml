@@ -6,5 +6,7 @@ before_install:
   - unzip -d elixir master.zip
 before_script:
   - export PATH=`pwd`/elixir/bin:$PATH
+  - mix local.hex --force
+  - mix deps.get --only test
 script:
   - mix test
