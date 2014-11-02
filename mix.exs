@@ -3,8 +3,15 @@ defmodule LTSV.Mixfile do
 
   def project do
     [app: :ltsv,
+     name: "ltsvex",
      version: "0.1.0",
      elixir: "~> 1.0",
+     package: [
+       contributors: ["Takayuki Matsubara"],
+       licenses: ["MIT"],
+       links: %{"GitHub" => "https://github.com/ma2gedev/ltsvex"}
+      ],
+     description: "A Labeled Tab-separated Values Parser",
      deps: deps]
   end
 
