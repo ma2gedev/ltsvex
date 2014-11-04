@@ -1,6 +1,6 @@
 defmodule LTSV do
   @doc """
-  # parse ltsv string
+  # Parse ltsv string
 
   iex> LTSV.parse("name:taka\taddress:Seattle\\nname:neko\taddress:near") |> Enum.map(&Dict.to_list/1)
   [[{"name", "taka"}, {"address", "Seattle"}], [{"name", "neko"}, {"address", "near"}]]
@@ -12,7 +12,7 @@ defmodule LTSV do
   end
 
   @doc """
-  # parse ltsv record
+  # Parse ltsv record
 
   iex> LTSV.parse_line("name:taka\tneko:nya-")
   #HashDict<[{"name", "taka"}, {"neko", "nya-"}]>
@@ -31,7 +31,7 @@ defmodule LTSV do
   end
 
   @doc """
-  # Dump the HashDict lists into a ltsv string
+  # Dump the Dict lists into a ltsv string
 
   iex> LTSV.dump [%{"address" => "Seattle", "name" => "taka"}, %{"address" => "Chicago", "name" => "tetsuo"}]
   "address:Seattle\tname:taka\naddress:Chicago\tname:tetsuo"
