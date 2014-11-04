@@ -28,14 +28,14 @@ $ mix deps.get
 
 ## Usage
 
-### Parse ltsv string
+### Parse a ltsv string
 
 ```
 iex> LTSV.parse("name:taka\taddress:Seattle\\nname:neko\taddress:near") |> Enum.map(&Dict.to_list/1)
 [[{"name", "taka"}, {"address", "Seattle"}], [{"name", "neko"}, {"address", "near"}]]
 ```
 
-### Dump the Dict lists into a ltsv string
+### Dump a list of `Dict`s into a ltsv string
 
 ```
 iex> LTSV.dump [%{"address" => "Seattle", "name" => "taka"}, %{"address" => "Chicago", "name" => "tetsuo"}]
