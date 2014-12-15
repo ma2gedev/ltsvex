@@ -35,7 +35,8 @@ defmodule LTSV.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [{:ex_doc, "~> 0.6", only: :dev},
-     {:excoveralls, "~> 0.3", only: :dev}
+      #{:excoveralls, "~> 0.3", only: :dev}
+     {:excoveralls, github: "ma2gedev/excoveralls", ref: "use_hackney"}
     ]
   end
 end
