@@ -8,6 +8,7 @@ before_script:
   - export PATH=`pwd`/elixir/bin:$PATH
   - mix local.hex --force
   - mix deps.get
+sudo: false
 script:
   - mix test
 after_success:
